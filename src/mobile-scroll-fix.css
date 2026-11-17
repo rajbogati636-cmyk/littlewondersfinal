@@ -1,0 +1,20 @@
+/* Keep in-page navigation in normal flow on phones. */
+@media (max-width: 760px) {
+  .venue-region-nav,
+  .defence-round-links {
+    position: static;
+    inset: auto;
+    background: transparent;
+    border-bottom: 0;
+    box-shadow: none;
+  }
+
+  .venue-region-nav {
+    padding: 0;
+  }
+
+  .defence-round-links {
+    flex-direction: column;
+    padding: 0 22px;
+  }
+}
