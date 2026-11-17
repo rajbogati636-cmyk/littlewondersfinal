@@ -1,0 +1,25 @@
+/* Private & Corporate Events only: the client's requested purple colour direction. */
+.private-events-page { --ocean:#675184; --ocean-mid:#9379B5; --ocean-soft:#A18ABD; --ink:#3D324B; --ink-soft:#5E5268; --sky:#DDCEE9; --sky-pale:#F3EDF9; --cream-warm:#F4ECF9; --accent:#977EB7; --accent-soft:#D8C8E8; --accent-pale:#ECE2F5; --sage:#9076AE; --line:rgba(85,60,112,.17); background:#FFFDFE; }
+.private-events-page .page-hero { background:linear-gradient(135deg,#E1D4EF,#F8F4FB); }
+.private-events-page .page-hero h1 { color:#604578; }
+.private-events-page .page-hero p,.private-events-page .page-hero .eyebrow { color:#5F4A74; }
+.private-events-page :is(h1,h2,h3,h4) { color:var(--ocean); }
+.private-events-page .button { background:#E0D0EF; color:#443253; border-color:#C9B4DE; }
+.private-events-page .button:hover { background:#CDB5E3; color:#332640; }
+.private-events-page .button.outline { background:#FFF; color:#5A4075; border:1px solid #9276AC; }
+.private-events-page .button.outline:hover { background:#F4ECF9; }
+.private-events-page .functions-pathway { border-color:#DDD0E9; }
+.private-events-page .functions-pathway-badge { color:#5A4075; }
+.private-events-page .functions-care { background:#F2ECF8; }
+.private-events-page .functions-care-card { border-color:#E4D9ED; }
+.private-events-page .functions-care-icon { color:#6B538C; background:#EAE0F3; }
+.private-events-page .functions-care-card:hover .functions-care-icon { background:#786198; color:#fff; }
+.private-events-page .functions-inclusions { background:#F8F3FC; }
+.private-events-page .functions-inclusion-item svg,.private-events-page .functions-check { color:#8064A5; }
+.private-events-page .functions-guide-card,.private-events-page .functions-cta { background:#EEE4F6; }
+.private-events-page .functions-guide-icon { color:#6B538C; }
+.private-events-page :where(a,button):focus-visible { outline:3px solid #634880; outline-offset:3px; }
+
+.private-events-page .functions-expo-link { max-width:1090px; padding:28px 30px; margin:0 auto 40px; border-left:4px solid #9A81B9; background:#F7F2FB; }
+.private-events-page .functions-expo-link p { color:#5E5268; font-size:15px; line-height:1.65; }
+.private-events-page .functions-expo-link a { margin-top:12px; color:#675184; font-weight:600; font-size:14px; display:inline-flex; gap:9px; align-items:center; }

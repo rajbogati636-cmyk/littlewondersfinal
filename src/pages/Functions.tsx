@@ -1,0 +1,186 @@
+import { Link } from 'react-router-dom';
+import { Download, Palette, Users, Briefcase, PartyPopper, Heart, Clock, CheckCircle2, ArrowRight } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import './FunctionsTheme.css';
+
+const privateEventTypes = ['Christmas Parties','Annual Celebrations','Anniversaries / Engagements',"Children's Parties",'Birthday Parties (over 18)','and much more!'];
+const corporateEventTypes = ['Workshops & Classes','Training Sessions','Business Functions','Christmas Parties','Staff Meetings','Social Meets'];
+
+const careOptions = [
+  { icon: Users, title: 'Supervised Care & Entertainment', desc: 'Crafts, games, activities and more — keeping children happily engaged throughout your event.' },
+  { icon: Clock, title: 'Extra Hands at Meal Times', desc: 'An extra set of hands to help with feeding, settling and supporting little ones during meals.' },
+  { icon: Heart, title: 'Slumber Spaces', desc: 'Comfortable slumber spaces to accommodate your tired little guests while you celebrate.' },
+  { icon: Palette, title: 'Added Magic', desc: "Temporary tattoos, piñatas, ball pits, scavenger hunts and disco parties — fun additions to make the day special." },
+];
+
+const inclusions = [
+  '1–30+ children catered for','In-home, at your venue or accommodation',
+  'Care based on your preferences — child-free moments, entire child-free events, relaxed care and more',
+  'Unlimited activities planned around the interests of the children attending',
+  'Comfort styling — rugs, blankets, cushions, teepees, bean bags and everything to make it feel like home',
+  'Slumber spaces with bedding options and linen included, so little ones can snooze in comfort',
+  "Temporary tattoos, piñatas, ball pits, scavenger hunts and disco parties",
+  'Care of children with special needs can be accommodated depending on individual requirements',
+];
+
+const corporateBenefits = [
+  'Onsite, offsite or in-home care options for your guests',
+  'Help your team and guests feel welcomed at family-friendly celebrations',
+  'Reduce attendance barriers for parents at functions, meetings and workshops',
+  'Allow parents to check in with their children when suitable for the care arrangement',
+  'Recurring or one-off bookings to suit your schedule',
+  'Online event registration for organisers and parent registration for guests',
+  'Real-time updates can help parents stay informed during the event',
+  'Childcare arrangements coordinated around the schedule and character of the event',
+  'Ideal for end-of-year celebrations — parents enjoy themselves and so do the kids',
+  'Flexible care tailored to any business size, from small family-owned to large corporate',
+];
+
+const phases = [
+  { icon: PartyPopper, label: 'Private Celebrations', title: 'Making Memorable Events', text: 'Our process works similar to the way we cater for weddings — except more flexible, to accommodate the comfort of your own home, choice of venue or accommodation.', image: '/assets/legacy-private-01.webp', alt: 'Image from the original Little Wonders Private Functions page', types: privateEventTypes },
+  { icon: Briefcase, label: 'Business & Corporate', title: 'Care for Meetings & Events', text: 'Monthly business meetings, training events or social meets? Our Events Register and care services are perfect for you. Give your guests peace of mind with onsite, offsite or in-home care options. Bookings can be recurring or one-off.', image: '/assets/legacy-corporate-01.webp', alt: 'Creative materials for a workshop', types: corporateEventTypes },
+];
+
+export default function Functions() {
+  const rootRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('visible')),
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    rootRef.current?.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <main ref={rootRef} className="private-events-page">
+      <div className="page-hero">
+        <p className="eyebrow">Little Wonders</p>
+        <h1>Private &amp; Corporate Events</h1>
+        <p>Exceptional childcare for every kind of celebration and business event.</p>
+      </div>
+
+      <div className="functions-content">
+        <section className="functions-intro reveal">
+          <div className="functions-intro-copy">
+            <p className="eyebrow">Care, made personal</p>
+            <h2>Flexible, beautifully considered childcare for your private and corporate events.</h2>
+            <p>Whether you're hosting a birthday, anniversary, Christmas party or a corporate workshop, Little Wonders brings the same warm, professional care to your event that families trust us for at weddings — just more flexible, to suit the comfort of your own home, venue or accommodation.</p>
+            <p>Our range of services is designed to cater for any size business, from small family-owned companies to large corporate organisations. Whatever the occasion, we make sure the children are safe, happy and creating memories of their own — so you and your guests can relax and enjoy.</p>
+            <div className="functions-intro-actions">
+              <Link className="button" to="/event-registration">Register Your Event <ArrowRight size={16} strokeWidth={1.8} /></Link>
+              <Link className="button outline" to="/contact">Make an Enquiry</Link>
+            </div>
+          </div>
+          <div className="functions-intro-image">
+            <img src="/assets/legacy-private-02.webp" alt="Image from the original Private Functions page" />
+          </div>
+        </section>
+
+        {phases.map((phase, i) => (
+          <section key={phase.label} className={`functions-pathway reveal ${i % 2 === 1 ? 'reverse' : ''}`}>
+            <div className="functions-pathway-image">
+              <img src={phase.image} alt={phase.alt} loading="lazy" />
+              <div className="functions-pathway-badge">
+                <phase.icon size={20} strokeWidth={1.5} /><span>{phase.label}</span>
+              </div>
+            </div>
+            <div className="functions-pathway-copy">
+              <span className="eyebrow">{phase.label}</span>
+              <h2>{phase.title}</h2>
+              <p>{phase.text}</p>
+              <div className="functions-pathway-types">
+                <h3>Event types we cater for</h3>
+                <ul>{phase.types.map((t) => (
+                  <li key={t}><CheckCircle2 size={16} strokeWidth={1.8} className="functions-check" /><span>{t}</span></li>
+                ))}</ul>
+              </div>
+              <Link className="button small" to="/event-registration">Register Your Event <ArrowRight size={14} strokeWidth={1.8} /></Link>
+            </div>
+          </section>
+        ))}
+
+        <div className="functions-expo-link reveal"><p>Planning an exhibition, open day or community celebration? We also provide carefully coordinated family activity spaces and registered event childcare.</p><Link to="/expos-community-days">Explore Expos &amp; Community Days <ArrowRight size={15}/></Link></div>
+        <section className="functions-care reveal">
+          <p className="eyebrow centered">Care options</p>
+          <h2>Thoughtful care, tailored to your event.</h2>
+          <p className="functions-care-intro">From supervised entertainment to slumber spaces, we adapt our care to suit the rhythm of your celebration or business event.</p>
+          <div className="functions-care-grid">
+            {careOptions.map((opt) => (
+              <div key={opt.title} className="functions-care-card">
+                <span className="functions-care-icon"><opt.icon size={26} strokeWidth={1.5} /></span>
+                <h3>{opt.title}</h3>
+                <p>{opt.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="functions-inclusions reveal">
+          <div className="functions-inclusions-inner">
+            <p className="eyebrow centered">Inclusions</p>
+            <h2>What's included in our customised care packages</h2>
+            <p className="functions-inclusions-intro">Our packages can include multiple options, all catered to your preferences.</p>
+            <div className="functions-inclusions-list">
+              {inclusions.map((inc) => (
+                <div key={inc} className="functions-inclusion-item">
+                  <CheckCircle2 size={18} strokeWidth={1.8} /><span>{inc}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="functions-benefits reveal">
+          <div className="functions-benefits-image">
+            <img src="/assets/legacy-corporate-03.webp" alt="Image from the original Small Business and Corporate page" loading="lazy" />
+          </div>
+          <div className="functions-benefits-copy">
+            <p className="eyebrow">Business &amp; corporate benefits</p>
+            <h2>Why hire an onsite care team for your function, party or celebration?</h2>
+            <ul>{corporateBenefits.map((b) => (
+              <li key={b}><CheckCircle2 size={18} strokeWidth={1.8} className="functions-check" /><span>{b}</span></li>
+            ))}</ul>
+            <div className="functions-benefits-cta">
+              <Link className="button" to="/event-registration">Register Your Event</Link>
+              <Link className="button outline" to="/contact">Ask a Question</Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="functions-care reveal">
+          <h2>End-of-year celebrations</h2>
+          <p className="functions-care-intro">We help make end-of-year gatherings welcoming for the whole team. Children have activities of their own while parents enjoy time with colleagues.</p>
+          <div className="functions-reference-photos">
+            <img src="/assets/legacy-corporate-02.webp" alt="Colleagues raising glasses at a celebration" loading="lazy" />
+            <img src="/assets/legacy-private-02.webp" alt="Private group event" loading="lazy" />
+            <img src="/assets/legacy-corporate-01.webp" alt="Materials for a creative workshop" loading="lazy" />
+          </div>
+        </section>
+
+        <section className="functions-guide reveal">
+          <div className="functions-guide-card">
+            <div className="functions-guide-icon"><Download size={34} strokeWidth={1.5} /></div>
+            <div className="functions-guide-copy">
+              <h2>Functions Guide</h2>
+              <p>Download our Functions Guide for a full overview of our private and corporate care packages, inclusions and options. Contact us for current availability and a personalised quote.</p>
+              <a className="button" href="/assets/little-wonders-functions-guide.pdf" download>
+                <Download size={16} strokeWidth={1.8} /> Download Functions Guide
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="functions-cta reveal">
+          <h2>Relax &amp; Enjoy Your Event</h2>
+          <p>Let us take care of the little people, so you can be fully present for what matters most.</p>
+          <div className="functions-cta-actions">
+            <Link className="button" to="/event-registration">Register Your Event <ArrowRight size={16} strokeWidth={1.8} /></Link>
+            <Link className="button outline" to="/contact">Request a Connection Call</Link>
+          </div>
+        </section>
+      </div>
+    </main>
+  );
+}

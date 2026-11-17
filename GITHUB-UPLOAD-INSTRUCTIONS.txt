@@ -1,0 +1,44 @@
+LITTLE WONDERS WEBSITE
+
+GitHub
+Extract this complete source ZIP. Upload its contents so package.json, src/,
+public/ and functions/ are at the repository root. For an existing repository,
+apply the contents on a preview branch and review the diff before merging.
+
+Cloudflare Pages
+Framework preset: React (Vite)
+Build command: npm run build
+Build output directory: dist
+Root directory: leave blank when the project is at the repository root.
+
+Keep the existing Cloudflare project settings, including RESEND_API_KEY,
+ENQUIRY_FROM and ENQUIRY_TO. Contact, Event Registration and Parent Registration
+continue to use the existing Cloudflare Functions. Check inbox delivery on the
+deployed preview before merging.
+
+Updates in this release
+- Nicole's latest Our Story copy and portrait, and the original outdoor chess
+  photograph on the About Us landing page.
+- New supplied logo in the header and footer, styled to blend with the footer.
+- Nicole's cropped Wedding hero, updated Wedding package inclusions, and
+  replacement Families and Defence photos.
+- The 25 approved Greater Brisbane venues. The /locations/brisbane URL still
+  works and the complete directory has 115 entries.
+- Revised Wonder Team and Careers qualification and screening wording.
+- Current Defence benefits clarified beside the guide download.
+
+Outstanding inputs
+- Careers currently accepts enquiries by email. The original application
+  requires the Gravity Forms definition or Nicole's original questions and
+  approved submission details.
+- The homepage Instagram feed requires an enabled Elfsight widget or an
+  approved HTTPS embed URL in VITE_LITTLE_WONDERS_INSTAGRAM_FEED_URL. The
+  footer link points to Nicole's Instagram.
+- The supplied ADF PDF is included as received. Its older discount is flagged
+  beside the download. Replace it when Nicole supplies a revised PDF.
+- The additional Ratios and Defence photos, any new Terms or accommodation
+  listings, and the client editing and handover arrangements need client input.
+
+Journal
+Edit src/content/journal.json and put new post images in public/assets. Use
+a unique slug and supply the title, date, image path and body, then rebuild.

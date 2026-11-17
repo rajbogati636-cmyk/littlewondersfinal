@@ -1,0 +1,118 @@
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+
+const minRequirements = [
+  'Minimum 18 years of age',
+  'Blue Card (QLD) or Ochre Card (NT)',
+  'Childcare First Aid + CPR + Anaphylaxis (or equivalent)',
+  "Driver's License (P or Opens)",
+  'Safe and reliable vehicle (with road safety certificate)',
+  'Exceptional written and verbal communication skills',
+  'Annual Police Check',
+  'Be punctual and presentable',
+];
+
+const desiredRequirements = [
+  "Minimum 2 years' experience with children under 16 years of age",
+  'Qualified in or studying towards a minimum Certificate III in Childcare, Education or Health related qualifications',
+];
+
+const phases = [
+  { num: 'ONE', title: 'Application Submission' },
+  { num: 'TWO', title: 'Shortlisting' },
+  { num: 'THREE', title: 'Interviews' },
+  { num: 'FOUR', title: 'Reference Check & Qualifications' },
+  { num: 'FIVE', title: 'Survey Registration' },
+  { num: 'SIX', title: 'Contract Sign' },
+  { num: 'SEVEN', title: 'Inductions' },
+];
+
+export default function WonderTeam() {
+  const rootRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('visible')),
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    rootRef.current?.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <main ref={rootRef}>
+      <div className="page-hero">
+        <p className="eyebrow">Little Wonders</p>
+        <h1>Our Wonder Team</h1>
+        <p>Carefully chosen. Personally selected.</p>
+      </div>
+
+      <div className="content-grid wonder-team-layout">
+        <aside className="side-nav" aria-label="Explore About Us pages">
+          <Link to="/about">About Us</Link>
+          <Link to="/our-story">Our Story</Link>
+          <Link to="/wonder-team" aria-current="page">Our Wonder Team</Link>
+          <Link to="/values-mission-sustainability">Values, Mission &amp; Sustainability</Link>
+          <Link to="/ratios">Our Ratios</Link>
+          <Link to="/team-safety">Team Safety</Link>
+          <Link to="/faq">FAQ</Link>
+        </aside>
+        <div className="wonder-team-content">
+          <section className="wonder-intro reveal">
+          <div className="wonder-intro-copy">
+            <p className="eyebrow">Care, made personal</p>
+            <h2>Carefully chosen. Personally selected. Here because they genuinely care.</h2>
+            <p>Choosing someone to care for your children takes trust. That's why every member of our Wonder Team is personally recruited and selected in-house by our Director.</p>
+            <p>Qualifications, experience and required checks matter — but we believe exceptional care goes beyond what's written on a certificate.</p>
+            <p>We look for warmth, intuition, professionalism and a genuine passion for children. It's noticing when a little one isn't quite themselves, spotting a potential risk, getting down on the floor to play, or knowing when an extra cuddle is needed.</p>
+            <p>Every team member undergoes personal interviews, qualification and check verification, and extensive reference checks before representing Little Wonders.</p>
+            <p>Where possible, we also carefully match our team to the ages, needs and personalities of the children, as well as the type of care being provided.</p>
+            <p className="wonder-motto">Above all, our Wonder Team reflects the values at the heart of Little Wonders: <strong>Safe. Warm. Professional.</strong></p>
+          </div>
+          <div className="wonder-intro-image">
+            <img src="/assets/legacy-team-01.webp" alt="Two people talking across a table" />
+          </div>
+        </section>
+
+        <section className="wonder-quote reveal">
+          <h2>Our team (or Wonder Team as we call it!) is made up of extremely amazing people…</h2>
+          <p className="wonder-quote-sub">AND WE ARE ALWAYS ON THE SEARCH FOR MORE!</p>
+          <p className="wonder-quote-text">We tailor each nanny and babysitting placement to each family's unique needs, ensuring we can get the best possible fit for your family.</p>
+        </section>
+
+        <div className="wonder-requirements-grid">
+          <section className="wonder-requirements reveal">
+            <h3>Team Minimum <span>Requirements</span></h3>
+            <p className="wonder-requirements-label">of all positions:</p>
+            <ul>{minRequirements.map((req) => <li key={req}>{req}</li>)}</ul>
+          </section>
+          <section className="wonder-requirements wonder-requirements-desired reveal reveal-d1">
+            <h3>Desired <span>Requirements</span></h3>
+            <ul>{desiredRequirements.map((req) => <li key={req}>{req}</li>)}</ul>
+          </section>
+        </div>
+
+        <section className="wonder-selection reveal">
+          <h2>Our Selection Process</h2>
+          <img className="wonder-selection-photo" src="/assets/legacy-team-02.webp" alt="Image from the original Wonder Team selection section" loading="lazy" />
+          <p>Our selection process isn't just about qualifications, our team members go through a number of phases to become part of our team. Regardless of qualification not everyone who has the right requirements is necessarily a great fit for our team. We take the time to ensure that only the best possible are part of our team.</p>
+          <div className="wonder-phases">
+            {phases.map((phase) => (
+              <div key={phase.num} className="wonder-phase">
+                <span className="wonder-phase-num">Phase {phase.num}</span>
+                <strong>{phase.title}</strong>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="wonder-cta reveal">
+          <h2>Let us help you Find Balance</h2>
+          <Link className="button" to="/contact">Contact Us Now <ArrowRight size={16} strokeWidth={1.8} /></Link>
+        </section>
+        </div>
+      </div>
+    </main>
+  );
+}

@@ -1,0 +1,113 @@
+/* Defence Care only: inspired by the original site's visible reference screenshot.
+   No shared styles, forms, Cloudflare handlers or Resend settings are changed. */
+.defence-original-page { background:#fff; color:var(--ink); }
+.defence-legacy-title-band {
+  min-height:154px; box-sizing:border-box; padding:40px 20px;
+  background:#96A86B; display:flex; align-items:center; justify-content:center;
+}
+.defence-legacy-title-band h1 {
+  margin:0; color:#263824; font:400 clamp(34px,3vw,44px)/1.2 var(--sans);
+  letter-spacing:.095em; text-align:center; text-transform:uppercase;
+}
+.defence-original-opening {
+  width:min(1500px,92%); margin:0 auto; padding:112px 0 18px;
+  text-align:center;
+}
+.defence-original-opening h2 {
+  margin:0 auto 42px; max-width:1470px; color:#6B7955;
+  font:400 clamp(38px,4.2vw,64px)/1.12 var(--serif); letter-spacing:0;
+}
+.defence-original-opening p {
+  margin:0 auto 24px; max-width:1460px;
+  color:#465244; font:400 clamp(16px,1.4vw,22px)/1.6 var(--sans);
+}
+.defence-original-opening p:last-child { margin-top:30px; }
+.defence-original-types {
+  width:min(1200px,92%); margin:36px auto 58px;
+  display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px;
+}
+.defence-original-types a {
+  display:flex; align-items:center; justify-content:center; flex-direction:column;
+  gap:13px; min-height:140px; border:1px solid #BCCAAF; border-radius:14px;
+  color:#455538; background:#F1F3E9; text-align:center; font-size:15px;
+  padding:18px 12px; transition:background .2s ease,transform .2s ease;
+}
+.defence-original-types a:hover,.defence-original-types a:focus-visible { background:#E4EAD9; transform:translateY(-2px); }
+.defence-original-photo-block { width:min(900px,90%); margin:0 auto 64px; text-align:center; }
+.defence-original-photo-block img { display:block; width:100%; max-height:520px; object-fit:cover; border-radius:4px; }
+.defence-original-content { width:min(1000px,88%); margin:0 auto 80px; }
+.defence-original-section { padding:50px 0; border-bottom:1px solid #D6DECA; scroll-margin-top:110px; }
+.defence-original-section:first-child { border-top:1px solid #D6DECA; }
+.defence-original-section h2 { font-size:clamp(40px,4.5vw,57px); margin:14px 0 20px; line-height:1.15; }
+.defence-original-section > p:not(.eyebrow) { max-width:850px; line-height:1.85; font-size:16px; }
+.defence-original-inset { margin-top:30px; border-left:4px solid #96A86B; padding:22px 28px; background:#F4F3EC; border-radius:0 14px 14px 0; }
+.defence-original-inset h3 { font-family:var(--sans); font-size:19px; font-weight:600; letter-spacing:.02em; margin-bottom:12px; color:#4A5C39; }
+.defence-original-inset p { font-size:15px; line-height:1.75; }
+.defence-original-register { text-align:center; padding:70px 6% 76px; background:#E8EEDF; }
+.defence-original-register h2,.defence-original-contact h2 { font-size:clamp(44px,4.8vw,65px); margin:10px 0 26px; line-height:1.1; }
+.defence-original-actions { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; }
+.defence-original-actions a,.defence-original-contact a { display:inline-flex; gap:9px; align-items:center; justify-content:center; min-height:47px; }
+.defence-original-actions .button-outline { background:#fffdfb; color:#4A5C39; border:1px solid #96A86B; }
+.defence-original-contact { padding:83px 6% 90px; text-align:center; background:#fffdfb; }
+@media(max-width:860px) {
+ .defence-original-opening { padding-top:76px; }
+ .defence-original-opening h2 { margin-bottom:28px; }
+ .defence-original-types { grid-template-columns:repeat(2,minmax(0,1fr)); margin-bottom:44px; }
+ .defence-original-content { width:90%; }
+}
+@media(max-width:510px) {
+ .defence-legacy-title-band { min-height:118px; padding:28px 16px; }
+ .defence-original-opening { padding-top:55px; width:90%; }
+ .defence-original-types { gap:9px; }
+ .defence-original-types a { min-height:112px; padding:12px 6px; font-size:13px; }
+ .defence-original-types svg { width:25px; height:25px; }
+ .defence-original-section { padding:38px 0; }
+ .defence-original-inset { padding:18px; }
+}
+
+
+/* Defence-only brand styling; does not affect the website's shared forms or header. */
+.defence-original-page {
+  --ocean: #5D754A;
+  --ocean-mid: #96A86B;
+  --ocean-soft: #98A487;
+  --accent: #8E725B;
+  --accent-soft: #C8A486;
+  --accent-pale: #F2E8DE;
+  --sky-pale: #F3F6EC;
+  --ink: #344334;
+  --ink-soft: #4B584A;
+}
+.defence-original-page .eyebrow { color: #536849; }
+.defence-original-page .button { background: #C8A486; color: #293728; }
+.defence-original-page .button:hover { background: #B99473; color: #293728; }
+.defence-original-page .button-outline,
+.defence-original-page .button-outline:hover { background: #FFFDFB; color: #415434; border: 1px solid #96A86B; }
+.defence-original-page :where(a,button):focus-visible { outline-color: #50653C; }
+
+/* Nov 2026 Defence content update: four circular-image service sections. */
+.defence-round-links { display:flex; flex-wrap:wrap; gap:12px; max-width:1150px; margin:28px auto 65px; justify-content:center; padding:0 22px; }
+.defence-round-links a { padding:12px 18px; background:#EDF1E5; color:#43583B; border-radius:999px; border:1px solid #C5D3B6; text-align:center; font:600 13px/1.45 var(--sans); }
+.defence-round-links a:hover { background:#DAE6CD; }
+.defence-circle-grid { width:min(1290px,93%); margin:0 auto 90px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; align-items:start; }
+.defence-circle-card { min-width:0; scroll-margin-top:115px; padding:clamp(26px,3vw,44px); background:#FCFDF9; border:1px solid #D7E0CF; border-radius:22px; text-align:center; box-shadow:0 14px 36px rgba(67,83,56,.07); }
+.defence-circle-photo { width:min(100%,245px); aspect-ratio:1; border:7px solid #FFF; outline:1px solid #BBCBAA; border-radius:50%; overflow:hidden; margin:0 auto 26px; background:#E9EFDF; box-shadow:0 8px 30px rgba(67,83,56,.10); }
+.defence-circle-photo img { width:100%; height:100%; object-fit:cover; }
+.defence-circle-card h2 { font:500 clamp(36px,3.1vw,49px)/1.14 var(--serif); color:#475C3D; margin:0 auto 22px; }
+.defence-circle-card > p { color:#435145; font:400 15px/1.8 var(--sans); margin:0 0 15px; text-align:left; }
+.defence-circle-card .defence-ratio { text-align:left; margin:20px 0 0; padding:18px 22px; background:#EFF3EA; border-left:4px solid #96A86B; border-radius:0 10px 10px 0; }
+.defence-care-type { text-align:left; margin-top:24px; }
+.defence-care-type h3 { color:#715A44; font:600 18px/1.45 var(--sans); margin:0 0 12px; }
+.defence-care-type p { margin:0 0 13px; color:#435145; font:400 15px/1.8 var(--sans); }
+.defence-benefits { max-width:1250px; margin:0 auto 75px; background:#F1F3E9; border-radius:24px; padding:clamp(34px,5vw,66px); text-align:center; }
+.defence-benefits h2, .defence-guide-download h2 { font:500 clamp(39px,4.6vw,62px)/1.16 var(--serif); color:#445B3B; margin:15px 0 24px; }
+.defence-benefits > p:not(.eyebrow),.defence-guide-download p:not(.eyebrow) { font:400 16px/1.8 var(--sans); color:#435145; max-width:870px; margin:0 auto 30px; }
+.defence-benefit-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; text-align:left; margin:34px auto 28px; }
+.defence-benefit-grid article { padding:26px; border:1px solid #CED8C1; border-radius:14px; background:#FFF; }
+.defence-benefit-grid h3 { font:600 18px/1.35 var(--sans); color:#455A3D; margin-bottom:13px; }
+.defence-benefit-grid p { font:400 15px/1.7 var(--sans); color:#4B5646; }
+.defence-benefits > p.defence-benefit-disclaimer { max-width:1100px; margin:0 auto; text-align:left; font-size:14px; }
+.defence-guide-download { padding:65px 24px 80px; text-align:center; background:#F7F3EF; }
+.defence-guide-download .button { display:inline-flex; align-items:center; gap:10px; margin-top:7px; }
+@media(max-width:900px) { .defence-circle-grid { grid-template-columns:1fr; max-width:750px; } .defence-benefit-grid { grid-template-columns:1fr; } .defence-benefits { margin-left:3%; margin-right:3%; } }
+@media(max-width:600px) { .defence-circle-grid { width:92%; gap:22px; margin-bottom:65px; } .defence-circle-card { padding:28px 20px; } .defence-round-links { margin-bottom:44px; } .defence-guide-download { padding:50px 22px 60px; } }

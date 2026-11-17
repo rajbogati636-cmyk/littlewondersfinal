@@ -1,0 +1,12 @@
+import { Link } from 'react-router-dom';
+import { ArrowRight, UsersRound, Palette, ShieldCheck } from 'lucide-react';
+
+export default function ExposCommunityDays() {return <main className="lw-expos-page">
+  <header className="page-hero"><p className="eyebrow">Little Wonders · Private &amp; Corporate Events</p><h1>Expos &amp; Community Days</h1><p>Welcoming, thoughtfully planned spaces for children and families.</p></header>
+  <section className="lw-editorial-container">
+    <div className="lw-editorial-intro"><p className="eyebrow">Care planned around your event</p><h2>Engaging children's experiences for community celebrations.</h2><p>From open days, expos and family fun days to conferences and workshops, our team can help create age-appropriate activities and care arrangements for children attending your event.</p><p>We discuss the event layout, expected numbers, ages and individual care needs before recommending the most suitable arrangement.</p></div>
+    <div className="lw-editorial-cards"><article><Palette size={30} strokeWidth={1.5}/><h3>Open Care</h3><p>Supervised family activities: children participate alongside their families. Parents or accompanying adults remain responsible for their child's supervision and wellbeing.</p></article><article><ShieldCheck size={30} strokeWidth={1.5}/><h3>Closed Care</h3><p>Registered childcare: children are signed in and out with our care team. Family registration and an individually planned staffing arrangement are required.</p></article><article><UsersRound size={30} strokeWidth={1.5}/><h3>Tailored Activities</h3><p>Creative crafts, sensory play, age-appropriate games and other engaging experiences can be coordinated to suit your event and available space.</p></article></div>
+    <div className="functions-reference-photos"><img src="/assets/legacy-expos-01.webp" alt="" loading="lazy" /><img src="/assets/legacy-expos-02.webp" alt="" loading="lazy" /></div>
+    <section className="lw-editorial-panel"><h2>Let's plan the care around your event.</h2><p>Our services can support public celebrations, community open days, workshop programs and corporate functions. Staffing ratios and the practical care arrangement are assessed for each booking.</p><div className="lw-editorial-buttons"><Link className="button" to="/event-registration">Register Your Event <ArrowRight size={16}/></Link><Link className="button outline" to="/functions">Private &amp; Corporate Events</Link></div></section>
+  </section>
+</main>}

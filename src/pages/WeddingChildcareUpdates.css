@@ -1,0 +1,37 @@
+/* Scoped to Wedding Childcare; does not affect forms or global styling */
+.wedding-updates-page { --wedding-ink: #344A5D; --wedding-blue: #6A869F; --wedding-pale: #EDF5FC; }
+.wedding-updates-page .wedding-extras { margin: 80px auto 0; max-width: 990px; border: 1px solid #D2E3F1; border-radius: 22px; background: #F0F7FD; padding: clamp(28px,5vw,64px); }
+.wedding-extras h2, .wedding-journey h2 { font: 500 clamp(40px,4.5vw,66px)/1.14 var(--serif); color: var(--wedding-ink); text-align: center; margin: 14px auto 18px; }
+.wedding-extras > p:not(.eyebrow) { max-width: 780px; margin: 0 auto 28px; text-align: center; font: 400 16px/1.75 var(--sans); color: var(--ink-soft); }
+.wedding-extras ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px 25px; text-align: left; }
+.wedding-extras li { display: flex; align-items: flex-start; gap: 12px; color: var(--wedding-ink); font: 400 15px/1.65 var(--sans); }
+.wedding-extras li svg { flex-shrink: 0; margin-top: 2px; color: #567A9B; }
+.wedding-journey { max-width: 1060px; margin: 80px auto 0; text-align:center; }
+.wedding-journey-steps { list-style: none; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; text-align: left; padding: 0; margin: 40px 0 0; }
+.wedding-journey-steps li { display: flex; align-items: flex-start; gap: 18px; border:1px solid #D5E4F1; border-radius: 16px; background: #FFF; padding: clamp(20px,3vw,32px); }
+.wedding-journey-steps li:last-child { grid-column:1/-1; background: var(--wedding-pale); }
+.wedding-step-number { flex: 0 0 54px; height:54px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#FFF; background:var(--wedding-blue); font:600 16px var(--sans); }
+.wedding-journey-steps h3 { font: 600 18px/1.4 var(--sans); letter-spacing: .01em; color:var(--wedding-ink); margin-bottom:11px; }
+.wedding-journey-steps p { font: 400 15px/1.75 var(--sans); color: var(--ink-soft); }
+.wedding-step-link { display:inline-flex; align-items:center; gap:6px; color:#446B91; text-decoration:underline; text-underline-offset:4px; margin-top:14px; font:600 14px var(--sans); }
+.wedding-guide-actions { display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin:42px auto 0; }
+.wedding-guide-actions .button { display: inline-flex; align-items:center; gap:10px; }
+.wedding-updates-page :where(a,button):focus-visible { outline:3px solid #446B91; outline-offset:3px; }
+@media(max-width:720px) { .wedding-extras ul,.wedding-journey-steps { grid-template-columns:1fr; } .wedding-journey-steps li:last-child { grid-column:1; } .wedding-journey-steps li { gap:13px; } .wedding-step-number { flex-basis:44px; height:44px; } .wedding-guide-actions { flex-direction:column; } .wedding-guide-actions .button { justify-content:center; } }
+
+
+.wedding-package-inclusions { background:#F3F8FC; padding:clamp(45px,5vw,80px) clamp(22px,4vw,75px); border-radius:24px; margin:60px 0; }
+.wedding-package-inclusions h2 { text-align:center; font-size:clamp(38px,4.3vw,54px); margin:14px auto 20px; }
+.wedding-package-inclusions > p:not(.eyebrow) { max-width:850px; margin: 0 auto 26px; color: var(--ink-soft); line-height:1.7; font-size:15px; text-align:center; }
+.wedding-package-inclusions ul { margin:0 auto; padding:0; list-style:none; max-width:990px; display:grid;grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px 24px; }
+.wedding-package-inclusions li { display:flex; align-items:flex-start; gap:12px; line-height:1.6; font-size:15px; }
+.wedding-package-inclusions li svg { color:#6A869F; flex-shrink:0; margin-top:3px; }
+.wedding-package-inclusions .wedding-package-note { font-size:13px !important; font-style:italic; margin-top:27px !important; }
+.wedding-real-gallery { text-align:center; margin:65px 0; }
+.wedding-real-gallery h2 { font-size:clamp(35px,4vw,52px); margin-bottom:13px; }
+.wedding-real-gallery p { margin-bottom:25px; color: var(--ink-soft); }
+.wedding-real-gallery-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+.wedding-real-gallery-grid img { width:100%; height:270px; border-radius:12px; object-fit:cover; }
+@media(max-width:740px) { .wedding-package-inclusions ul {grid-template-columns:1fr;} .wedding-real-gallery-grid {grid-template-columns:1fr;} .wedding-real-gallery-grid img {height:240px;} }
+
+.wedding-updates-page .wedding-hero-photo { object-position: center 65%; }
