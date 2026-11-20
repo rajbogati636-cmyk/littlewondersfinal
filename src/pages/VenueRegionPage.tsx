@@ -30,6 +30,7 @@ export default function VenueRegionPage() {
         <p className="eyebrow">Wedding and event childcare</p>
         <h2>Explore venues in {region.name}.</h2>
         <p>Below are the venue names and locations supplied by Little Wonders. Contact us to discuss your celebration and personalised childcare arrangements.</p>
+        {region.availabilityNote && <p className="venue-region-availability">{region.availabilityNote}</p>}
       </div>
       <nav className="venue-region-nav" aria-label="Browse Extraordinary Venues regions">
         {venueRegions.map(item => <Link key={item.id} to={`/locations/${item.id}`} aria-current={item.id === region.id ? 'page' : undefined}>
@@ -42,17 +43,27 @@ export default function VenueRegionPage() {
             <h2 id="regional-venues-heading">{region.name} venues</h2><p>{region.coverage}</p></div>
           <span className="venue-region-count">{region.venues.length} venues</span>
         </div>
-        <div className="venue-table-wrap">
+        {region.subregions?.length ? region.subregions.map(subregion => <div className="venue-subregion-block" key={subregion.name}>
+          <h3>{subregion.name}</h3>
+          <div className="venue-table-wrap">
+            <table className="venue-table">
+              <thead><tr><th scope="col">Wedding venue</th><th scope="col">Location</th></tr></thead>
+              <tbody>{subregion.venues.map((venue, index) => <tr key={`${region.id}-${subregion.name}-${index}`}>
+                <td>{venue.name}</td><td>{venue.location}</td>
+              </tr>)}</tbody>
+            </table>
+          </div>
+        </div>) : <div className="venue-table-wrap">
           <table className="venue-table">
             <thead><tr><th scope="col">Wedding venue</th><th scope="col">Location</th></tr></thead>
             <tbody>{region.venues.map((venue, index) => <tr key={`${region.id}-${index}`}>
               <td>{venue.name}</td><td>{venue.location}</td>
             </tr>)}</tbody>
           </table>
-        </div>
+        </div>}
         <div className="venue-region-footer venue-region-footer-actions">
           <Link to="/locations">View the complete venue directory <ArrowRight size={16} aria-hidden="true"/></Link>
-          <Link to="/contact">Enquire about childcare <ArrowRight size={16} aria-hidden="true"/></Link>
+          <Link to="/contact">{region.availabilityNote ? 'Register your interest' : 'Enquire about childcare'} <ArrowRight size={16} aria-hidden="true"/></Link>
         </div>
       </section>
       <div className="venue-directory-cta">

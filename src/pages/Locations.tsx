@@ -8,12 +8,28 @@ import './venues-directory.css';
 export default function Locations() {
   const [search, setSearch] = useState('');
   const term = search.trim().toLocaleLowerCase();
-  const results = useMemo(() => venueRegions.map(region => ({
-    ...region,
-    venues: region.venues.filter(venue =>
-      !term || [venue.name, venue.location, region.name].some(text => text.toLocaleLowerCase().includes(term))
-    ),
-  })).filter(region => region.venues.length > 0), [term]);
+  const results = useMemo(() => venueRegions.map(region => {
+    const regionNameMatches = !term || region.name.toLocaleLowerCase().includes(term);
+    const regionMatches = !term || [region.name, region.coverage]
+      .some(text => text.toLocaleLowerCase().includes(term));
+
+    if (region.subregions?.length) {
+      const subregions = region.subregions.map(subregion => ({
+        ...subregion,
+        venues: subregion.venues.filter(venue =>
+          regionNameMatches || !term || subregion.name.toLocaleLowerCase().includes(term) ||
+          [venue.name, venue.location].some(text => text.toLocaleLowerCase().includes(term))
+        ),
+      })).filter(subregion => subregion.venues.length > 0);
+
+      return { ...region, subregions, venues: subregions.flatMap(subregion => subregion.venues) };
+    }
+
+    const venues = region.venues.filter(venue =>
+      regionMatches || [venue.name, venue.location].some(text => text.toLocaleLowerCase().includes(term))
+    );
+    return { ...region, venues };
+  }).filter(region => region.venues.length > 0), [term]);
   const totalMatches = results.reduce((sum, region) => sum + region.venues.length, 0);
 
   return <main>
@@ -44,7 +60,7 @@ export default function Locations() {
           <input id="venue-search" type="search" value={search} onChange={event => setSearch(event.target.value)} placeholder="Search venue, suburb or region" />
           {search && <button type="button" onClick={() => setSearch('')} aria-label="Clear venue search"><X size={18}/></button>}
         </div>
-        <p className="venue-count" role="status">{totalMatches} {totalMatches === 1 ? 'venue' : 'venues'} {term ? 'matching your search' : 'across five regions'}</p>
+        <p className="venue-count" role="status">{totalMatches} {totalMatches === 1 ? 'venue' : 'venues'} {term ? 'matching your search' : `across ${venueRegions.length} regions`}</p>
       </div>
 
       <div className="venue-region-sections">
@@ -54,20 +70,31 @@ export default function Locations() {
               <p className="eyebrow">Southern Queensland</p>
               <h2 id={`${region.id}-heading`}>{region.name}</h2>
               <p>{region.coverage}</p>
+              {region.availabilityNote && <p className="venue-region-availability">{region.availabilityNote}</p>}
             </div>
             <span className="venue-region-count">{region.venues.length} venues</span>
           </div>
-          <div className="venue-table-wrap">
+          {region.subregions?.length ? region.subregions.map(subregion => <div className="venue-subregion-block" key={subregion.name}>
+            <h3>{subregion.name}</h3>
+            <div className="venue-table-wrap">
+              <table className="venue-table">
+                <thead><tr><th scope="col">Venue Name</th><th scope="col">Location</th></tr></thead>
+                <tbody>{subregion.venues.map((venue, index) => <tr key={`${region.id}-${subregion.name}-${index}`}>
+                  <td>{venue.name}</td><td>{venue.location}</td>
+                </tr>)}</tbody>
+              </table>
+            </div>
+          </div>) : <div className="venue-table-wrap">
             <table className="venue-table">
               <thead><tr><th scope="col">Venue Name</th><th scope="col">Location</th></tr></thead>
               <tbody>{region.venues.map((venue, index) => <tr key={`${region.id}-${index}`}>
                 <td>{venue.name}</td><td>{venue.location}</td>
               </tr>)}</tbody>
             </table>
-          </div>
+          </div>}
           <div className="venue-region-footer venue-region-footer-actions">
             <Link to={`/locations/${region.id}`}>Open {region.name} venue page <ArrowRight size={16} aria-hidden="true"/></Link>
-            <Link to="/contact">Enquire about childcare in {region.name}<ArrowRight size={16} aria-hidden="true"/></Link>
+            <Link to="/contact">{region.availabilityNote ? `Register your interest in ${region.name}` : `Enquire about childcare in ${region.name}`}<ArrowRight size={16} aria-hidden="true"/></Link>
           </div>
         </section>)}
         {results.length === 0 && <div className="venue-no-results"><h2>No matching venues</h2><p>Try a different venue name, suburb or region.</p><button type="button" onClick={() => setSearch('')}>Show all venues</button></div>}
