@@ -1,18 +1,25 @@
-# Extraordinary Venues — dedicated regional lists
+# Extraordinary Venues — regional directory update
 
-The latest client's lists are supplied in `src/data/venues.ts`, including her additional Inverstanely (Crossdale) item.
+The directory contains six regional pages and 125 client-supplied venue entries. The new southern region is grouped into three subregions so visitors can scan the locations easily.
 
-**New/updated routes**
-- `/locations` — full directory, searchable, grouped by five regions.
-- `/locations/maleny` — Maleny & Hinterland (24).
-- `/locations/sunshine-coast` — Sunshine Coast & Noosa (30).
-- `/locations/brisbane` — Brisbane (39).
-- `/locations/toowoomba` — Toowoomba & Darling Downs (21, including Inverstanely).
-- `/locations/tamborine` — Tamborine Mountain (15).
+**Regional routes**
+- `/locations` — searchable directory, grouped by six regions.
+- `/locations/maleny` — Maleny & Hinterland (24 venues).
+- `/locations/sunshine-coast` — Sunshine Coast & Noosa (30 venues).
+- `/locations/brisbane` — Greater Brisbane (25 venues).
+- `/locations/toowoomba` — Toowoomba & Darling Downs (21 venues, including Inverstanely in Crossdale).
+- `/locations/southern-downs` — Warwick, Stanthorpe & Southern Downs (10 venues), grouped as Stanthorpe & Granite Belt, Warwick & Southern Downs, and Scenic Rim & Boonah.
+- `/locations/tamborine` — Tamborine Mountain (15 venues).
 
-The homepage Extraordinary Venues region links now open the respective regional pages, without changing its appearance or layout. `More Regions` continues opening the combined directory.
+The new regional link is included in the homepage Extraordinary Venues section and the directory's region navigation. The directory search also recognises the new subregion headings. Existing regional venue lists and the mobile scroll fix are retained. The new region is clearly marked as planned 2027–28 coverage, subject to demand, with a register-your-interest enquiry rather than implying that service is already available there.
 
-This patch intentionally does not modify the header, footer, registration forms, contact forms, Cloudflare Functions, Supabase or Resend configuration. The 129 venue entries are transcribed from client-provided content and should be approved by the client, not independently represented as verified partnerships.
+The new 10 listings are transcribed from Nicole's supplied message. “Up & Away Braeside” retains a note that its precise location is to be confirmed. Maroon Hill Estate is listed in Maroon, as supplied. These are venue listings only; the website does not claim that any venue is a Little Wonders partner or endorsement.
 
-## GitHub browser upload
-Extract the changed-files ZIP. On your `pastel-preview` branch, use Add file -> Upload files and drag in the **contents** of the extracted folder, preserving `src/` paths. Do not upload the ZIP itself or overwrite unrelated files. After the Cloudflare preview deploys, visit `/locations` and test each regional link.
+This update does not modify the header, footer, registration forms, contact forms, Cloudflare Functions, Supabase or Resend configuration.
+
+## Preview checks
+1. Open `/locations` and confirm the new sixth region appears.
+2. Open `/locations/southern-downs` and check all three subregion tables and the 10 venue rows.
+3. Search for “Stanthorpe”, “Warwick”, “Scenic Rim”, and “Maroon” and confirm relevant results appear.
+4. Check the homepage link and all existing regional links.
+5. Check the directory navigation and tables on mobile before merging to `main`.

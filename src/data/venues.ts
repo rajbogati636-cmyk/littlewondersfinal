@@ -5,7 +5,36 @@
  * client supplies approved listings.
  */
 export type Venue = { name: string; location: string };
-export type VenueRegion = { id: string; name: string; coverage: string; venues: Venue[] };
+export type VenueSubregion = { name: string; venues: Venue[] };
+export type VenueRegion = { id: string; name: string; coverage: string; venues: Venue[]; subregions?: VenueSubregion[]; availabilityNote?: string };
+
+const southernDownsSubregions: VenueSubregion[] = [
+  {
+    name: "Stanthorpe & Granite Belt",
+    venues: [
+      { name: "Balancing Heart Vineyard", location: "Wyberba" },
+      { name: "Lagnicourt Weddings & Events", location: "Pozieres" },
+      { name: "Up & Away Braeside", location: "Granite Belt (location to be confirmed)" },
+      { name: "Braeside Homestead", location: "Dalveen" },
+      { name: "Meteora Vineyard", location: "Ballandean" },
+    ],
+  },
+  {
+    name: "Warwick & Southern Downs",
+    venues: [
+      { name: "Glenbridge Country Weddings", location: "Murrays Bridge" },
+      { name: "The Abbey Boutique Hotel", location: "Warwick" },
+      { name: "Rivoli Farm", location: "Warwick region" },
+    ],
+  },
+  {
+    name: "Scenic Rim & Boonah",
+    venues: [
+      { name: "Kooroomba Vineyard & Lavender Farm", location: "Mount Alford" },
+      { name: "Maroon Hill Estate", location: "Maroon" },
+    ],
+  },
+];
 
 export const venueRegions: VenueRegion[] = [
   {
@@ -135,6 +164,14 @@ export const venueRegions: VenueRegion[] = [
       { name: "The Barn and Scotty's Garage", location: "Flagstone Creek" },
       { name: "Inverstanely", location: "Crossdale" },
     ],
+  },
+  {
+    id: "southern-downs",
+    name: "Warwick, Stanthorpe & Southern Downs",
+    coverage: "Warwick, Stanthorpe, the Granite Belt, Boonah, Maroon and surrounding Southern Downs and Scenic Rim locations",
+    availabilityNote: "Little Wonders is planning to expand into these areas in 2027–28, subject to demand. Please enquire to register your interest.",
+    venues: southernDownsSubregions.flatMap(subregion => subregion.venues),
+    subregions: southernDownsSubregions,
   },
   {
     id: "tamborine",

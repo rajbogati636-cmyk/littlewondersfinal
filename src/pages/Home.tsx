@@ -129,12 +129,13 @@ export default function Home() {
         <div className="venues-band-content">
           <p className="eyebrow">We travel to</p>
           <h2>Extraordinary Venues.</h2>
-          <p>From the rolling hills of Maleny and the Sunshine Coast Hinterland to Toowoomba, Greater Brisbane, Tamborine Mountain and beyond, we bring exceptional childcare to Queensland's most beautiful wedding and event locations.</p>
+          <p>From the rolling hills of Maleny and the Sunshine Coast Hinterland to Toowoomba, Greater Brisbane and Tamborine Mountain, we bring exceptional childcare to Queensland's most beautiful wedding and event locations. We're also planning future coverage in Warwick, Stanthorpe and the Southern Downs for 2027–28, subject to demand.</p>
           <div className="regions">
             <Link to="/locations/maleny">Maleny &amp; Hinterland</Link>
             <Link to="/locations/sunshine-coast">Sunshine Coast &amp; Noosa</Link>
             <Link to="/locations/brisbane">Greater Brisbane</Link>
             <Link to="/locations/toowoomba">Toowoomba &amp; Darling Downs</Link>
+            <Link to="/locations/southern-downs">Warwick, Stanthorpe &amp; Southern Downs</Link>
             <Link to="/locations/tamborine">Tamborine Mountain</Link>
             <Link to="/locations">More Regions</Link>
           </div>
