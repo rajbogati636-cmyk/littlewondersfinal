@@ -49,6 +49,7 @@ const weddingExtras = [
   'Baby resources and age-appropriate technology that can be used without Wi-Fi',
   'Comfortable, beautifully styled play and rest spaces',
   'Onsite care at a wedding venue or offsite care at suitable accommodation',
+  'Big Kids Hang Outs and activities planned and provided for older children to keep the fun rolling into the night!',
 ];
 
 export default function WeddingChildcare(){return <main className="wedding-updates-page"><section className="service-detail-hero"><div><p className="eyebrow">Our flagship service</p><h1>Wedding Childcare</h1><p>Designed around your celebration. Curated with care for your children.</p><p>From intimate gatherings to extraordinary destination weddings, Little Wonders creates personalised onsite and offsite childcare experiences so every guest can be fully present.</p><Link className="button" to="/contact">Enquire About Wedding Childcare <ArrowRight size={16}/></Link></div><img className="wedding-hero-photo" src="/assets/wedding-guests-outdoors.jpg" alt="Children playing outdoors with balloons at a wedding" width={2579} height={2333} /></section>
