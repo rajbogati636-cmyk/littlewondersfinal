@@ -43,8 +43,8 @@ export default function Home() {
         <div className="hero-full-image" role="img" aria-label="Wedding guests playing garden Connect Four" />
         <div className="hero-full-content">
           <p className="eyebrow">Premium wedding &amp; event childcare<br />across Southern Queensland</p>
-          <h1>Designs for Your Wedding.<br /><em>Care curated for your children.</em></h1>
-          <p>Thoughtfully tailored childcare experiences for families, weddings and events across Southern Queensland, so you can be fully present — knowing the little people are safe, happy and creating memories of their own.</p>
+          <h1>Trusted Childcare for<br />Little Guests.<br /><em>Peace of Mind for You.</em></h1>
+          <p>Thoughtfully tailored childcare experiences for families, weddings and events across Southern Queensland, so you can be fully present — knowing the littlest guests are safe, happy and creating memories of their own.</p>
           <div className="actions">
             <Link className="button" to="/contact">
               Request a Connection Call <ArrowRight size={16} strokeWidth={1.8} />

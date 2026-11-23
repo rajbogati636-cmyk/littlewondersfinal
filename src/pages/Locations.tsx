@@ -40,7 +40,7 @@ export default function Locations() {
     </header>
 
     <div className="locations-page venue-directory">
-      <img className="venue-directory-landscape" src="/assets/maleny-client.jpg" alt="Panoramic hinterland landscape in Southern Queensland" />
+      <img className="venue-directory-landscape" src="/assets/wedding-couple-under-tree.webp" alt="A wedding couple beneath a large tree in a countryside setting" width={2600} height={1548} />
       <div className="venue-directory-intro">
         <p className="eyebrow">Explore our regions</p>
         <h2>Thoughtful care wherever you celebrate.</h2>

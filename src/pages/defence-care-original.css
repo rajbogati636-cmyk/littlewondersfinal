@@ -3,10 +3,10 @@
 .defence-original-page { background:#fff; color:var(--ink); }
 .defence-legacy-title-band {
   min-height:154px; box-sizing:border-box; padding:40px 20px;
-  background:#96A86B; display:flex; align-items:center; justify-content:center;
+  background:#E6F0E4; display:flex; align-items:center; justify-content:center;
 }
 .defence-legacy-title-band h1 {
-  margin:0; color:#263824; font:400 clamp(34px,3vw,44px)/1.2 var(--sans);
+  margin:0; color:#304733; font:400 clamp(34px,3vw,44px)/1.2 var(--sans);
   letter-spacing:.095em; text-align:center; text-transform:uppercase;
 }
 .defence-original-opening {
