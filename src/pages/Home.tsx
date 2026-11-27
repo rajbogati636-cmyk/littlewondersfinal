@@ -67,7 +67,7 @@ export default function Home() {
       <div id="services" className="home-services-heading"><h2>Exceptional Childcare for Extraordinary Occasions</h2></div>
       <section className="alt-section reveal">
         <div className="alt-image">
-          <div className="alt-image-bg" role="img" aria-label="Two young wedding guests dancing" style={{ backgroundImage: "url('/assets/service-wedding.jpg')" }} />
+          <div className="alt-image-bg" role="img" aria-label="Children enjoying a wedding celebration together outdoors" style={{ backgroundImage: "url('/assets/home-wedding-group-2026.webp')" }} />
           <div className="alt-image-badge"><Heart size={18} strokeWidth={1.5} /> Wedding Childcare</div>
         </div>
         <div className="alt-copy cream">
@@ -87,7 +87,7 @@ export default function Home() {
       {/* Corporate Care — alternating row (flipped) */}
       <section className="alt-section flip reveal home-corporate-section">
         <div className="alt-image">
-          <div className="alt-image-bg" role="img" aria-label="Children enjoying a private celebration" style={{ backgroundImage: "url('/assets/service-corporate.jpg')" }} />
+          <div className="alt-image-bg" role="img" aria-label="Three children on a tree swing at an outdoor celebration" style={{ backgroundImage: "url('/assets/home-events-swing-2026.webp')" }} />
           <div className="alt-image-badge"><Briefcase size={18} strokeWidth={1.5} /> Private &amp; Corporate</div>
         </div>
         <div className="alt-copy sky">

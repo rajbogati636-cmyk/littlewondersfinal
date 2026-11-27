@@ -109,7 +109,8 @@ export default function WonderTeam() {
 
         <section className="wonder-cta reveal">
           <h2>Let us help you Find Balance</h2>
-          <Link className="button" to="/contact">Contact Us Now <ArrowRight size={16} strokeWidth={1.8} /></Link>
+          <p>Ready to become part of the team? Complete our careers application form online.</p>
+          <Link className="button" to="/careers#application">Apply to Join Our Wonder Team <ArrowRight size={16} strokeWidth={1.8} /></Link>
         </section>
         </div>
       </div>
