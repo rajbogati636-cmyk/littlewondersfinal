@@ -15,6 +15,7 @@ const aboutDropdown: { label: string; href: string }[] = [
   { label: 'About Us', href: '/about' },
   { label: 'Our Story', href: '/our-story' },
   { label: 'Our Wonder Team', href: '/wonder-team' },
+  { label: 'Join Our Wonder Team', href: '/careers' },
   { label: 'Values, Mission & Sustainability', href: '/values-mission-sustainability' },
   { label: 'Our Ratios', href: '/ratios' },
   { label: 'Team Safety', href: '/team-safety' },
@@ -106,6 +107,18 @@ export default function Navbar() {
         </nav>
         <Link className="button small" to="/contact" onClick={() => setMenuOpen(false)}>Request a Connection Call</Link>
       </header>
+      {/* Shortcuts are always visible on a phone, without opening the hamburger menu. */}
+      <div className="mobile-service-banner" aria-label="Quick navigation to Little Wonders services">
+        <span className="mobile-service-label">Discover more</span>
+        <nav className="mobile-service-links" aria-label="Services and careers shortcuts">
+          <Link to="/wedding-childcare">Weddings</Link>
+          <Link to="/functions">Events</Link>
+          <Link to="/families">Families</Link>
+          <Link to="/defence-care">Defence</Link>
+          <Link to="/locations">Venues</Link>
+          <Link to="/careers">Join our team</Link>
+        </nav>
+      </div>
     </>
   );
 }

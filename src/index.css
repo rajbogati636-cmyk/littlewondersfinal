@@ -1825,3 +1825,147 @@ nav a:not(.dropdown-menu a):hover { color: var(--ink); }
 .journal-article li { margin-bottom: 9px; }
 #services, #group-babysitting { scroll-margin-top: 120px; }
 @media (max-width: 760px) { .journal-grid { grid-template-columns: 1fr; } }
+
+/* NOV 27 CLIENT UPDATES — accessible phone shortcuts and careers application */
+.mobile-service-banner { display: none; }
+@media (max-width: 900px) {
+  .mobile-service-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #eaf3fa;
+    border-bottom: 1px solid #d2e3ed;
+    padding: 7px 12px;
+    min-width: 0;
+  }
+  .mobile-service-label {
+    color: #4f6576;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+  .mobile-service-banner .mobile-service-links {
+    display: flex;
+    flex: 1 1 auto;
+    gap: 5px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+    min-width: 0;
+    padding: 2px 0 5px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mobile-service-banner .mobile-service-links a {
+    display: inline-block;
+    flex: 0 0 auto;
+    font-size: 11px;
+    font-weight: 650;
+    color: #31566f;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 1.2;
+    background: #fff;
+    border: 1px solid #d4e4ef;
+    border-radius: 20px;
+    padding: 9px 11px;
+  }
+  .mobile-service-banner .mobile-service-links a:focus-visible,
+  .mobile-service-banner .mobile-service-links a:hover {
+    outline-color: #31566f;
+    background: #d6e8f5;
+  }
+  .mobile-service-banner .mobile-service-links a::after { display: none !important; }
+}
+@media (max-width: 620px) {
+  .registration-strip-inner { min-height: auto; padding: 7px 12px; }
+  .registration-strip-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    width: 100%;
+    max-width: 460px;
+  }
+  .registration-strip-links a {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    min-height: 34px;
+    padding: 7px 9px;
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: .025em;
+    background: rgba(255,255,255,.6);
+  }
+  .registration-strip-links a:last-child {
+    grid-column: 1 / -1;
+    width: min(72%, 280px);
+    justify-self: center;
+  }
+  .mobile-service-banner { gap: 7px; padding: 6px 10px; }
+  .mobile-service-label { font-size: 9px; }
+}
+
+.career-application-section {
+  scroll-margin-top: 95px;
+  background: #f5f9fc;
+  border: 1px solid #dbe7ef;
+  border-radius: 22px;
+  padding: clamp(20px, 4.4vw, 55px);
+}
+.career-form-intro { text-align: center; max-width: 690px; margin: 0 auto 30px; }
+.career-form-intro h2 { font-size: clamp(35px, 4vw, 54px); margin: 10px 0 14px; }
+.career-form-intro p:not(.eyebrow) { font-size: 15px; line-height: 1.75; color: var(--ink-soft); }
+.career-application-form { max-width: 830px; margin: 0 auto; }
+.career-form-section {
+  min-width: 0;
+  margin: 0 0 24px;
+  padding: 27px;
+  border: 1px solid #d8e4ec;
+  border-radius: 15px;
+  background: #fff;
+}
+.career-form-section legend { padding: 0 8px; font-family: var(--serif); font-size: clamp(22px, 2.6vw, 29px); color: var(--ocean); font-weight: 500; }
+.career-form-section > p { font-size: 13px; color: var(--ink-soft); margin: 0 0 17px; line-height: 1.6; }
+.career-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 19px 20px; }
+.career-full { grid-column: 1 / -1; }
+.career-field { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+.career-field label { font-size: 12px; line-height: 1.45; font-weight: 650; color: #314c60; }
+.career-field input:not([type="file"]), .career-field select, .career-field textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid #c7d6df;
+  border-radius: 9px;
+  background: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  color: #243746;
+  padding: 12px 13px;
+  min-height: 44px;
+}
+.career-field textarea { resize: vertical; line-height: 1.5; }
+.career-field input[type="file"] { display: block; width: 100%; padding: 12px 0; font-size: 12px; }
+.career-field input:focus-visible, .career-field textarea:focus-visible, .career-field select:focus-visible { outline: 2px solid #6598ba; outline-offset: 2px; }
+.career-regions { display: flex; flex-wrap: wrap; gap: 8px; margin: 9px 0 24px; }
+.career-regions label { display: flex; align-items: center; gap: 7px; border: 1px solid #d0e0ea; border-radius: 22px; padding: 10px 13px; font-size: 12px; cursor: pointer; }
+.career-regions input, .career-consent input { accent-color: #46799b; width: 17px; height: 17px; flex: 0 0 auto; }
+.career-consent { margin: 12px 0 20px; line-height: 1.6; font-size: 13px; color: #334d5f; }
+.career-consent label { display: flex; gap: 10px; align-items: flex-start; }
+.career-consent a, .career-error a { color: #275c85; text-decoration: underline; }
+.career-honeypot { position: absolute; left: -9999px; height: 0; overflow: hidden; }
+.career-error { padding: 14px 16px; border: 1px solid #b86c65; border-radius: 10px; color: #8b3932; background: #fff4f3; font-size: 13px; }
+.career-form-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; }
+.career-form-actions .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; }
+.career-form-actions .button:disabled { opacity: .6; cursor: progress; }
+.career-form-actions p { flex: 1 1 220px; color: var(--ink-soft); font-size: 12px; line-height: 1.6; }
+.career-success { max-width: 620px; margin: auto; padding: 50px 20px; text-align: center; }
+.career-success svg { color: #467d62; margin: 0 auto 15px; }
+.career-success h3 { font-size: 32px; }
+.career-success p { margin: 12px 0 24px; line-height: 1.7; }
+@media (max-width: 620px) {
+  .career-form-section { padding: 22px 15px; }
+  .career-form-grid { grid-template-columns: 1fr; }
+  .career-full { grid-column: auto; }
+  .career-form-actions .button { width: 100%; }
+}
